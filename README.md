@@ -24,12 +24,6 @@ Visit the live scroll here:
 
 Or embed it in your Google Site using an iframe.
 
-## 🛠️ How to Update
-
-1. Upload new images via GitHub’s “Add file > Upload files”  
-2. Edit `index.html` to reference the new filenames  
-3. Commit changes — GitHub Pages will update automatically within minutes
-
 ## ❤️ Credits
 
 Created by Stefan — workflow architect, nonprofit logistics leader, and creative branding consultant.  
