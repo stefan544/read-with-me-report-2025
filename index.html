@@ -3,19 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Nonprofit Report</title>
+  <title>Read With Me – Annual Report 2025</title>
   <style>
     body {
       margin: 0;
       background-color: #fdf6f0;
       font-family: sans-serif;
     }
+
     .floating-image {
       position: absolute;
       width: 28px;
       transform: translateX(-50%);
       will-change: transform;
       opacity: 1;
+    }
+
+    .floating-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 120px 20px;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      font-weight: 600;
+      color: #333;
+    }
+
+    p {
+      color: #444;
     }
   </style>
 </head>
@@ -25,36 +48,48 @@
   <div class="floating-image" style="top: 180px; left: 25%;">
     <img src="1.png" alt="Decorative Element 1" />
   </div>
-
   <div class="floating-image" style="top: 420px; left: 60%;">
     <img src="2.png" alt="Decorative Element 2" />
   </div>
-
   <div class="floating-image" style="top: 780px; left: 40%;">
     <img src="3.png" alt="Decorative Element 3" />
   </div>
-
   <div class="floating-image" style="top: 1120px; left: 70%;">
     <img src="4.png" alt="Decorative Element 4" />
   </div>
-
   <div class="floating-image" style="top: 1480px; left: 35%;">
     <img src="5.png" alt="Decorative Element 5" />
   </div>
-
   <div class="floating-image" style="top: 1860px; left: 55%;">
     <img src="6.png" alt="Decorative Element 6" />
   </div>
-
   <div class="floating-image" style="top: 2240px; left: 30%;">
     <img src="7.png" alt="Decorative Element 7" />
   </div>
-
   <div class="floating-image" style="top: 2620px; left: 65%;">
     <img src="8.png" alt="Decorative Element 8" />
   </div>
 
-  <!-- Your full report content goes here -->
+  <!-- Report content sections -->
+  <div class="section">
+    <h1>Welcome to Our 2025 Annual Report</h1>
+    <p>This year, Read With Me celebrated new milestones in literacy, community outreach, and volunteer impact. Scroll to explore our journey.</p>
+  </div>
+
+  <div class="section">
+    <h2>Impact Highlights</h2>
+    <p>Over 12,000 books distributed. 300+ volunteers trained. 95% of partner schools reported improved reading engagement.</p>
+  </div>
+
+  <div class="section">
+    <h2>Stories from the Field</h2>
+    <p>“I watched my student read aloud for the first time with confidence.” — Volunteer, Coachella Valley</p>
+  </div>
+
+  <div class="section">
+    <h2>Looking Ahead</h2>
+    <p>In 2026, we aim to expand to 10 new schools and launch a bilingual reading initiative. Your support makes this possible.</p>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
