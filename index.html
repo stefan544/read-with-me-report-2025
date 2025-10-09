@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read With Me Annual Report</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fdf6f0;
+      color: #333;
+    }
+    .logo {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+    .logo img {
+      width: 120px;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInZoom 1.2s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes fadeInZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .page {
+      max-width: 800px;
+      margin: 60px auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .page.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .page img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .cta {
+      background-color: #6A1B9A;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .cta a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #FF6F00;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="RWM circle logo(1).png" alt="Read With Me Logo" />
+  </div>
+
+  <div class="page"><img src="Page 1 2025 Annual Report.png" alt="Annual Report Page 1" /></div>
+  <div class="page"><img src="Page 2 Annual Report.png" alt="Annual Report Page 2" /></div>
+  <div class="page"><img src="Page 3 2025 Annual Report.png" alt="Annual Report Page 3" /></div>
+  <div class="page"><img src="Page 4 2025 Annual Report.png" alt="Annual Report Page 4" /></div>
+
+  <div class="cta">
+    <h2>📘 Want the full report?</h2>
+    <a href="https://drive.google.com/your-pdf-link" target="_blank">Download PDF</a>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Read With Me Volunteer Programs. Thank you for reading with us.
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    pages.forEach(page => observer.observe(page));
+  </script>
+
+</body>
+</html>
