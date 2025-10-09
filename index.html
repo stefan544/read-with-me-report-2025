@@ -48,7 +48,7 @@
     }
     .floating-image {
       position: absolute;
-      width: 28px;
+      width: 40px;
       transform: translateX(-50%);
       will-change: transform;
       z-index: 2;
@@ -63,11 +63,11 @@
       height: auto;
       display: block;
     }
-    .flair-1 { top: 880px; left: 40px; transform: rotate(-10deg) scale(0.8); }
-    .flair-2 { top: 1280px; right: 40px; transform: rotate(8deg) scale(0.8); }
-    .flair-3 { top: 1680px; left: 50%; transform: translateX(-50%) rotate(-6deg) scale(0.8); }
-    .flair-4 { top: 2080px; left: 30px; transform: rotate(12deg) scale(0.8); }
-    .flair-5 { top: 2480px; right: 50px; transform: rotate(-14deg) scale(0.8); }
+    .flair-1 { top: 880px; left: 60px; transform: rotate(-10deg) scale(0.9); }
+    .flair-2 { top: 1280px; right: 60px; transform: rotate(8deg) scale(0.9); }
+    .flair-3 { top: 1680px; left: 760px; transform: rotate(-6deg) scale(0.9); }
+    .flair-4 { top: 2080px; left: 60px; transform: rotate(12deg) scale(0.9); }
+    .flair-5 { top: 2480px; right: 60px; transform: rotate(-14deg) scale(0.9); }
     .cta {
       background-color: #6A1B9A;
       color: white;
@@ -112,9 +112,9 @@
   <div class="page"><img src="p4.png" alt="Annual Report Page 4" /></div>
 
   <div class="floating-image flair-4"><img src="5.png" alt="Decorative 5" /></div>
-  <div class="floating-image"><img src="6.png" alt="Decorative 6" /></div>
+  <div class="floating-image" style="top: 2200px; left: 740px;"><img src="6.png" alt="Decorative 6" /></div>
   <div class="floating-image flair-5"><img src="7.png" alt="Decorative 7" /></div>
-  <div class="floating-image"><img src="8.png" alt="Decorative 8" /></div>
+  <div class="floating-image" style="top: 2680px; left: 60px;"><img src="8.png" alt="Decorative 8" /></div>
 
   <div class="page"><img src="map.png" alt="Map Page" /></div>
 
@@ -146,7 +146,7 @@
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       document.querySelectorAll('.floating-image').forEach(el => {
-        const offset = (scrollY - el.offsetTop) * 0.2;
+        const offset = (scrollY - el.offsetTop) * 0.15;
         el.style.transform = `translateX(-50%) translateY(${offset}px)`;
       });
     });
