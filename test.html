@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parallax Test</title>
+  <style>
+    body {
+      margin: 0;
+      height: 3000px; /* Enough scroll space */
+      background-color: #fdf6f0;
+    }
+    .floating-image {
+      position: absolute;
+      top: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      opacity: 1;
+      will-change: transform;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating-image">
+    <img src="1.png" alt="Test Graphic" />
+  </div>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      document.querySelectorAll('.floating-image').forEach(el => {
+        const offset = (scrollY - el.offsetTop) * 0.02;
+        el.style.transform = `translateX(-50%) translateY(${offset}px)`;
+      });
+    });
+  </script>
+
+</body>
+</html>
