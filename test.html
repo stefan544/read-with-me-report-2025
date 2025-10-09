@@ -7,29 +7,34 @@
   <style>
     body {
       margin: 0;
-      height: 3000px; /* Enough scroll space */
+      height: 2000px;
       background-image: linear-gradient(to bottom, #fdf6f0 0%, #f0e6dc 100%);
       font-family: sans-serif;
     }
-    .floating-image {
+    .floating-box {
       position: absolute;
-      top: 800px;
+      top: 200px;
       left: 50%;
       transform: translateX(-50%);
-      width: 28px;
-      opacity: 1;
+      width: 40px;
+      height: 40px;
+      background-color: #FF6F00;
+      border-radius: 50%;
       will-change: transform;
     }
-    .static-image {
+    .static-box {
       position: absolute;
-      top: 800px;
+      top: 200px;
       left: 60%;
-      width: 28px;
-      opacity: 0.5;
+      width: 40px;
+      height: 40px;
+      background-color: #6A1B9A;
+      border-radius: 50%;
+      opacity: 0.6;
     }
     .label {
       position: absolute;
-      top: 850px;
+      top: 250px;
       left: 50%;
       transform: translateX(-50%);
       font-size: 0.8em;
@@ -39,14 +44,8 @@
 </head>
 <body>
 
-  <div class="floating-image">
-    <img src="1.png" alt="Parallax Graphic" />
-  </div>
-
-  <div class="static-image">
-    <img src="static.png" alt="Static Graphic" />
-  </div>
-
+  <div class="floating-box"></div>
+  <div class="static-box"></div>
   <div class="label">← Parallax | Static →</div>
 
   <script>
@@ -55,9 +54,10 @@
         const scrollY = window.scrollY;
         console.log("Scroll position:", scrollY);
 
-        document.querySelectorAll('.floating-image').forEach(el => {
-          const offset = (scrollY - el.offsetTop) * 0.05; // exaggerate for visibility
+        document.querySelectorAll('.floating-box').forEach(el => {
+          const offset = (scrollY - el.offsetTop) * 0.2; // exaggerated for visibility
           el.style.transform = `translateX(-50%) translateY(${offset}px)`;
+          console.log("Offset:", offset);
         });
       });
     });
