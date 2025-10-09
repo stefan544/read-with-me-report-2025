@@ -5,94 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Read With Me Annual Report</title>
   <style>
-   body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #fdf6f0;
-  color: #333;
-}
-.logo {
-  text-align: center;
-  padding: 30px 20px 10px;
-}
-.logo img {
-  width: 200px;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: fadeInZoom 1.2s ease-out forwards;
-  animation-delay: 0.5s;
-}
-@keyframes fadeInZoom {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.page {
-  max-width: 800px;
-  margin: 30px auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  text-align: center;
-}
-.page.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.page img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.floating-image {
-  position: relative;
-  max-width: 100px;
-  margin: 10px auto;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.floating-image.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.floating-image img {
-  width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.float-left {
-  margin-left: 5%;
-}
-.float-right {
-  margin-right: 5%;
-}
-.float-center {
-  margin: 0 auto;
-}
-.cta {
-  background-color: #6A1B9A;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-}
-.cta a {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #FF6F00;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
-.footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 0.9em;
-  color: #666;
-}
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fdf6f0;
+      color: #333;
+    }
+    .logo {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+    .logo img {
+      width: 200px;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInZoom 1.2s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes fadeInZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .page {
+      position: relative;
+      max-width: 800px;
+      margin: 30px auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      text-align: center;
+    }
+    .page.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .page img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .decorative {
+      position: absolute;
+      width: 100px;
+      z-index: 2;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .decorative.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .top-left {
+      top: 20px;
+      left: 20px;
+    }
+    .bottom-right {
+      bottom: 20px;
+      right: 20px;
+    }
+    .top-right {
+      top: 20px;
+      right: 20px;
+    }
+    .bottom-left {
+      bottom: 20px;
+      left: 20px;
+    }
+    .cta {
+      background-color: #6A1B9A;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .cta a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #FF6F00;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
   </style>
 </head>
 <body>
@@ -101,23 +104,33 @@
     <img src="logo1.png" alt="Read With Me Logo 1" />
   </div>
 
-  <div class="page"><img src="p1.png" alt="Annual Report Page 1" /></div>
-  <div class="floating-image float-left"><img src="1.png" alt="Decorative 1" /></div>
-  <div class="floating-image float-right"><img src="2.png" alt="Decorative 2" /></div>
+  <div class="page">
+    <img src="p1.png" alt="Annual Report Page 1" />
+    <img src="1.png" class="decorative top-left" alt="Decorative 1" />
+    <img src="2.png" class="decorative bottom-right" alt="Decorative 2" />
+  </div>
 
-  <div class="page"><img src="p2.png" alt="Annual Report Page 2" /></div>
-  <div class="floating-image float-center"><img src="3.png" alt="Decorative 3" /></div>
-  <div class="floating-image float-left"><img src="4.png" alt="Decorative 4" /></div>
+  <div class="page">
+    <img src="p2.png" alt="Annual Report Page 2" />
+    <img src="3.png" class="decorative top-right" alt="Decorative 3" />
+    <img src="4.png" class="decorative bottom-left" alt="Decorative 4" />
+  </div>
 
-  <div class="page"><img src="p3.png" alt="Annual Report Page 3" /></div>
-  <div class="floating-image float-right"><img src="5.png" alt="Decorative 5" /></div>
-  <div class="floating-image float-left"><img src="6.png" alt="Decorative 6" /></div>
+  <div class="page">
+    <img src="p3.png" alt="Annual Report Page 3" />
+    <img src="5.png" class="decorative top-left" alt="Decorative 5" />
+    <img src="6.png" class="decorative bottom-right" alt="Decorative 6" />
+  </div>
 
-  <div class="page"><img src="p4.png" alt="Annual Report Page 4" /></div>
-  <div class="floating-image float-center"><img src="7.png" alt="Decorative 7" /></div>
-  <div class="floating-image float-right"><img src="8.png" alt="Decorative 8" /></div>
+  <div class="page">
+    <img src="p4.png" alt="Annual Report Page 4" />
+    <img src="7.png" class="decorative top-right" alt="Decorative 7" />
+    <img src="8.png" class="decorative bottom-left" alt="Decorative 8" />
+  </div>
 
-  <div class="page"><img src="map.png" alt="Map Page" /></div>
+  <div class="page">
+    <img src="map.png" alt="Map Page" />
+  </div>
 
   <div class="logo">
     <img src="logo2.png" alt="Read With Me Logo 2" />
@@ -133,7 +146,7 @@
   </div>
 
   <script>
-    const elements = document.querySelectorAll('.page, .floating-image, .logo');
+    const elements = document.querySelectorAll('.page, .decorative, .logo');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
