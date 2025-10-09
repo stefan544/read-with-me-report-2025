@@ -27,15 +27,17 @@
     <img src="1.png" alt="Test Graphic" />
   </div>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      document.querySelectorAll('.floating-image').forEach(el => {
-        const offset = (scrollY - el.offsetTop) * 0.02;
-        el.style.transform = `translateX(-50%) translateY(${offset}px)`;
-      });
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    document.querySelectorAll('.floating-image').forEach(el => {
+      const offset = (scrollY - el.offsetTop) * 0.02;
+      el.style.transform = `translateX(-50%) translateY(${offset}px)`;
     });
-  </script>
+  });
+});
+</script>
 
 </body>
 </html>
