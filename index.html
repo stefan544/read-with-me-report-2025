@@ -48,7 +48,7 @@
     }
     .floating-image {
       position: absolute;
-      width: 88px;
+      width: 104px;
       will-change: transform;
       z-index: 2;
       opacity: 0;
@@ -61,6 +61,8 @@
       width: 100%;
       height: auto;
       display: block;
+      background: none;
+      border: none;
     }
 
     /* Left and right placement inside pages */
@@ -162,6 +164,8 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
         }
       });
     }, { threshold: 0.2 });
