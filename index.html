@@ -61,8 +61,12 @@
       width: 100%;
       height: auto;
       display: block;
-      background: none;
+      background-color: transparent;
       border: none;
+      box-shadow: none;
+      outline: none;
+      mix-blend-mode: multiply;
+      image-rendering: auto;
     }
 
     /* Left and right placement inside pages */
@@ -141,17 +145,16 @@
   <div class="page">
     <img src="map.png" alt="Map Page" />
   </div>
-  
-<!-- Page i1 -->
-<div class="page">
-  <img src="i1.png" alt="Additional Page i1" />
-</div>
 
-<!-- Page i2 -->
-<div class="page">
-  <img src="i2.png" alt="Additional Page i2" />
-</div>
-  
+  <!-- New Pages i1 and i2 -->
+  <div class="page">
+    <img src="i1.png" alt="Additional Page i1" />
+  </div>
+
+  <div class="page">
+    <img src="i2.png" alt="Additional Page i2" />
+  </div>
+
   <div class="logo">
     <img src="logo2.png" alt="Read With Me Logo 2" />
   </div>
