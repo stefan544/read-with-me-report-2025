@@ -48,10 +48,11 @@
     }
     .floating-image {
       position: absolute;
-      width: 60px;
+      width: 28px;
       z-index: 2;
       opacity: 0;
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      will-change: transform;
+      transition: opacity 0.6s ease;
     }
     .floating-image.visible {
       opacity: 1;
@@ -156,6 +157,15 @@
     }, { threshold: 0.2 });
 
     elements.forEach(el => observer.observe(el));
+
+    // Subtle scroll-based movement
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      document.querySelectorAll('.floating-image').forEach(el => {
+        const offset = (scrollY - el.offsetTop) * 0.02;
+        el.style.transform = `translateY(${offset}px)`;
+      });
+    });
   </script>
 
 </body>
