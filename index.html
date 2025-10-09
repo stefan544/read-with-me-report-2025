@@ -71,6 +71,12 @@
     .left-mid    { top: 50%; left: -100px; transform: rotate(-14deg) scale(0.95); }
     .right-bottom{ top: 80%; right: -100px; transform: rotate(6deg) scale(0.95); }
 
+    .end-section {
+      position: relative;
+      overflow: hidden;
+      min-height: 200px;
+    }
+
     .cta {
       background-color: #6A1B9A;
       color: white;
@@ -138,13 +144,16 @@
     <img src="logo2.png" alt="Read With Me Logo 2" />
   </div>
 
-  <div class="cta">
-    <h2>📘 Want the full report?</h2>
-    <a href="https://drive.google.com/your-pdf-link" target="_blank">Download PDF</a>
-  </div>
+  <!-- End section to prevent scroll overflow -->
+  <div class="end-section">
+    <div class="cta">
+      <h2>📘 Want the full report?</h2>
+      <a href="https://drive.google.com/your-pdf-link" target="_blank">Download PDF</a>
+    </div>
 
-  <div class="footer">
-    &copy; 2025 Read With Me Volunteer Programs. Thank you for reading with us.
+    <div class="footer">
+      &copy; 2025 Read With Me Volunteer Programs. Thank you for reading with us.
+    </div>
   </div>
 
   <script>
@@ -163,7 +172,7 @@
       const scrollY = window.scrollY;
       document.querySelectorAll('.floating-image').forEach(el => {
         const offset = (scrollY - el.offsetTop) * 0.1;
-        el.style.transform += ` translateY(${offset}px)`;
+        el.style.transform = `translateY(${offset}px)`;
       });
     });
   </script>
