@@ -46,6 +46,10 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+    .decorative-wrapper {
+      position: relative;
+      height: 0;
+    }
     .floating-image {
       position: absolute;
       width: 88px;
@@ -64,14 +68,14 @@
     }
 
     /* Top, middle, bottom placement with left/right anchors */
-    .flair-1 { top: 900px; left: 60px; transform: rotate(-10deg) scale(0.95); }     /* Top left */
-    .flair-2 { top: 1300px; right: 60px; transform: rotate(8deg) scale(0.95); }     /* Middle right */
-    .flair-3 { top: 1700px; left: 100px; transform: rotate(-6deg) scale(0.95); }    /* Bottom left */
-    .flair-4 { top: 2100px; right: 100px; transform: rotate(12deg) scale(0.95); }   /* Top right */
-    .flair-5 { top: 2500px; left: 80px; transform: rotate(-14deg) scale(0.95); }    /* Middle left */
-    .flair-6 { top: 2900px; right: 80px; transform: rotate(6deg) scale(0.95); }     /* Bottom right */
-    .flair-7 { top: 3300px; left: 120px; transform: rotate(-8deg) scale(0.95); }    /* Middle left */
-    .flair-8 { top: 3600px; right: 120px; transform: rotate(10deg) scale(0.95); }   /* Bottom right */
+    .flair-1 { top: 900px; left: 60px; transform: rotate(-10deg) scale(0.95); }
+    .flair-2 { top: 1300px; right: 60px; transform: rotate(8deg) scale(0.95); }
+    .flair-3 { top: 1700px; left: 100px; transform: rotate(-6deg) scale(0.95); }
+    .flair-4 { top: 2100px; right: 100px; transform: rotate(12deg) scale(0.95); }
+    .flair-5 { top: 2500px; left: 80px; transform: rotate(-14deg) scale(0.95); }
+    .flair-6 { top: 2900px; right: 80px; transform: rotate(6deg) scale(0.95); }
+    .flair-7 { top: 3300px; left: 120px; transform: rotate(-8deg) scale(0.95); }
+    .flair-8 { top: 3600px; right: 120px; transform: rotate(10deg) scale(0.95); }
 
     .cta {
       background-color: #6A1B9A;
@@ -103,15 +107,17 @@
     <img src="logo1.png" alt="Read With Me Logo 1" />
   </div>
 
-  <!-- Decorative elements -->
-  <div class="floating-image flair-1"><img src="1.png" alt="Decorative 1" /></div>
-  <div class="floating-image flair-2"><img src="2.png" alt="Decorative 2" /></div>
-  <div class="floating-image flair-3"><img src="3.png" alt="Decorative 3" /></div>
-  <div class="floating-image flair-4"><img src="4.png" alt="Decorative 4" /></div>
-  <div class="floating-image flair-5"><img src="5.png" alt="Decorative 5" /></div>
-  <div class="floating-image flair-6"><img src="6.png" alt="Decorative 6" /></div>
-  <div class="floating-image flair-7"><img src="7.png" alt="Decorative 7" /></div>
-  <div class="floating-image flair-8"><img src="8.png" alt="Decorative 8" /></div>
+  <!-- Decorative wrapper to prevent scroll extension -->
+  <div class="decorative-wrapper">
+    <div class="floating-image flair-1"><img src="1.png" alt="Decorative 1" /></div>
+    <div class="floating-image flair-2"><img src="2.png" alt="Decorative 2" /></div>
+    <div class="floating-image flair-3"><img src="3.png" alt="Decorative 3" /></div>
+    <div class="floating-image flair-4"><img src="4.png" alt="Decorative 4" /></div>
+    <div class="floating-image flair-5"><img src="5.png" alt="Decorative 5" /></div>
+    <div class="floating-image flair-6"><img src="6.png" alt="Decorative 6" /></div>
+    <div class="floating-image flair-7"><img src="7.png" alt="Decorative 7" /></div>
+    <div class="floating-image flair-8"><img src="8.png" alt="Decorative 8" /></div>
+  </div>
 
   <!-- Report pages -->
   <div class="page"><img src="p1.png" alt="Annual Report Page 1" /></div>
