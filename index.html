@@ -57,13 +57,15 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+    .parallax-wrapper {
+      will-change: transform;
+    }
     .floating-image {
       position: absolute;
       width: 104px;
-      will-change: transform;
       z-index: 2;
       opacity: 0;
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.6s ease;
     }
     .floating-image.visible {
       opacity: 1;
@@ -142,29 +144,29 @@
   <!-- Page 1 -->
   <div class="page">
     <img src="p1.png" alt="2025 annual report page showing literacy program impact stats" />
-    <div class="floating-image left-top"><div class="bob-wrapper"><img src="1.png" alt="" /></div></div>
-    <div class="floating-image right-mid"><div class="bob-wrapper"><img src="2.png" alt="" /></div></div>
+    <div class="parallax-wrapper"><div class="floating-image left-top"><div class="bob-wrapper"><img src="1.png" alt="" /></div></div></div>
+    <div class="parallax-wrapper"><div class="floating-image right-mid"><div class="bob-wrapper"><img src="2.png" alt="" /></div></div></div>
   </div>
 
   <!-- Page 2 -->
   <div class="page">
     <img src="p2.png" alt="2025 annual report page with volunteer stories" />
-    <div class="floating-image left-bottom"><div class="bob-wrapper"><img src="3.png" alt="" /></div></div>
-    <div class="floating-image right-top"><div class="bob-wrapper"><img src="4.png" alt="" /></div></div>
+    <div class="parallax-wrapper"><div class="floating-image left-bottom"><div class="bob-wrapper"><img src="3.png" alt="" /></div></div></div>
+    <div class="parallax-wrapper"><div class="floating-image right-top"><div class="bob-wrapper"><img src="4.png" alt="" /></div></div></div>
   </div>
 
   <!-- Page 3 -->
   <div class="page">
     <img src="p3.png" alt="2025 annual report page highlighting community events" />
-    <div class="floating-image left-mid"><div class="bob-wrapper"><img src="5.png" alt="" /></div></div>
-    <div class="floating-image right-bottom"><div class="bob-wrapper"><img src="6.png" alt="" /></div></div>
+    <div class="parallax-wrapper"><div class="floating-image left-mid"><div class="bob-wrapper"><img src="5.png" alt="" /></div></div></div>
+    <div class="parallax-wrapper"><div class="floating-image right-bottom"><div class="bob-wrapper"><img src="6.png" alt="" /></div></div></div>
   </div>
 
   <!-- Page 4 -->
   <div class="page">
     <img src="p4.png" alt="2025 annual report page with program goals" />
-    <div class="floating-image left-top"><div class="bob-wrapper"><img src="7.png" alt="" /></div></div>
-    <div class="floating-image right-mid"><div class="bob-wrapper"><img src="8.png" alt="" /></div></div>
+    <div class="parallax-wrapper"><div class="floating-image left-top"><div class="bob-wrapper"><img src="7.png" alt="" /></div></div></div>
+    <div class="parallax-wrapper"><div class="floating-image right-mid"><div class="bob-wrapper"><img src="8.png" alt="" /></div></div></div>
   </div>
 
   <!-- Map Page -->
@@ -210,9 +212,9 @@
 
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      document.querySelectorAll('.floating-image').forEach(el => {
+      document.querySelectorAll('.parallax-wrapper').forEach(el => {
         const offset = (scrollY - el.offsetTop) * 0.1;
-        el.style.translate = `0 ${offset}px`;
+        el.style.transform = `translateY(${offset}px)`;
       });
     });
   </script>
