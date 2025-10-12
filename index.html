@@ -28,6 +28,14 @@
         transform: scale(1);
       }
     }
+    @keyframes bob {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
+    }
+    .bob-wrapper {
+      animation: bob 3.5s ease-in-out infinite;
+    }
     .page {
       position: relative;
       max-width: 800px;
@@ -68,13 +76,12 @@
       mix-blend-mode: multiply;
       image-rendering: auto;
     }
-    /* Left and right placement inside pages */
-    .left-top { top: 10%; left: -100px; transform: rotate(-10deg) scale(0.95); }
-    .right-mid { top: 40%; right: -100px; transform: rotate(8deg) scale(0.95); }
+    .left-top    { top: 10%; left: -100px; transform: rotate(-10deg) scale(0.95); }
+    .right-mid   { top: 40%; right: -100px; transform: rotate(8deg) scale(0.95); }
     .left-bottom { top: 70%; left: -100px; transform: rotate(-6deg) scale(0.95); }
-    .right-top { top: 15%; right: -100px; transform: rotate(12deg) scale(0.95); }
-    .left-mid { top: 50%; left: -100px; transform: rotate(-14deg) scale(0.95); }
-    .right-bottom { top: 80%; right: -100px; transform: rotate(6deg) scale(0.95); }
+    .right-top   { top: 15%; right: -100px; transform: rotate(12deg) scale(0.95); }
+    .left-mid    { top: 50%; left: -100px; transform: rotate(-14deg) scale(0.95); }
+    .right-bottom{ top: 80%; right: -100px; transform: rotate(6deg) scale(0.95); }
     .end-section {
       position: relative;
       overflow: hidden;
@@ -102,7 +109,6 @@
       font-size: 0.9em;
       color: #666;
     }
-    /* Fallback for no JavaScript */
     noscript .page,
     noscript .logo {
       opacity: 1;
@@ -125,37 +131,44 @@
       }
     </style>
   </noscript>
+
   <div class="logo">
     <img src="logo1.png" alt="Read With Me logo featuring book and sun icon" />
   </div>
+
   <!-- Page 1 -->
   <div class="page">
     <img src="p1.png" alt="2025 annual report page showing literacy program impact stats" />
-    <div class="floating-image left-top"><img src="1.png" alt="" /></div>
-    <div class="floating-image right-mid"><img src="2.png" alt="" /></div>
+    <div class="floating-image left-top"><div class="bob-wrapper"><img src="1.png" alt="" /></div></div>
+    <div class="floating-image right-mid"><div class="bob-wrapper"><img src="2.png" alt="" /></div></div>
   </div>
+
   <!-- Page 2 -->
   <div class="page">
     <img src="p2.png" alt="2025 annual report page with volunteer stories" />
-    <div class="floating-image left-bottom"><img src="3.png" alt="" /></div>
-    <div class="floating-image right-top"><img src="4.png" alt="" /></div>
+    <div class="floating-image left-bottom"><div class="bob-wrapper"><img src="3.png" alt="" /></div></div>
+    <div class="floating-image right-top"><div class="bob-wrapper"><img src="4.png" alt="" /></div></div>
   </div>
+
   <!-- Page 3 -->
   <div class="page">
     <img src="p3.png" alt="2025 annual report page highlighting community events" />
-    <div class="floating-image left-mid"><img src="5.png" alt="" /></div>
-    <div class="floating-image right-bottom"><img src="6.png" alt="" /></div>
+    <div class="floating-image left-mid"><div class="bob-wrapper"><img src="5.png" alt="" /></div></div>
+    <div class="floating-image right-bottom"><div class="bob-wrapper"><img src="6.png" alt="" /></div></div>
   </div>
+
   <!-- Page 4 -->
   <div class="page">
     <img src="p4.png" alt="2025 annual report page with program goals" />
-    <div class="floating-image left-top"><img src="7.png" alt="" /></div>
-    <div class="floating-image right-mid"><img src="8.png" alt="" /></div>
+    <div class="floating-image left-top"><div class="bob-wrapper"><img src="7.png" alt="" /></div></div>
+    <div class="floating-image right-mid"><div class="bob-wrapper"><img src="8.png" alt="" /></div></div>
   </div>
+
   <!-- Map Page -->
   <div class="page">
     <img src="map.png" alt="Map of Read With Me literacy program impact in Coachella Valley" />
   </div>
+
   <!-- New Pages i1 and i2 -->
   <div class="page">
     <img src="i1.png" alt="2025 annual report page with donor acknowledgments" />
@@ -163,10 +176,11 @@
   <div class="page">
     <img src="i2.png" alt="2025 annual report page with future initiatives" />
   </div>
+
   <div class="logo">
     <img src="logo2.png" alt="Read With Me secondary logo with text" />
   </div>
-  <!-- End section to prevent scroll overflow -->
+
   <div class="end-section">
     <div class="cta">
       <h2>📘 Want the full report?</h2>
@@ -176,6 +190,7 @@
       &copy; 2025 Read With Me Volunteer Programs. Thank you for reading with us.
     </div>
   </div>
+
   <script>
     const elements = document.querySelectorAll('.page, .floating-image, .logo');
     const observer = new IntersectionObserver(entries => {
@@ -187,7 +202,9 @@
         }
       });
     }, { threshold: 0.2 });
+
     elements.forEach(el => observer.observe(el));
+
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       document.querySelectorAll('.floating-image').forEach(el => {
