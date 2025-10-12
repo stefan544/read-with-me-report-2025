@@ -10,7 +10,7 @@
       font-family: sans-serif;
       background-color: #fdf6f0;
       color: #333;
-    
+    }
     .logo {
       text-align: center;
       padding: 30px 20px 10px;
@@ -28,18 +28,17 @@
         transform: scale(1);
       }
     }
-@keyframes bob {
-  0%   { transform: translateY(0); }
-  25%  { transform: translateY(-25px); }
-  50%  { transform: translateY(0); }
-  75%  { transform: translateY(25px); }
-  100% { transform: translateY(0); }
-}
-
-.bob-wrapper {
-  animation: bob 2.5s ease-in-out infinite;
-  display: inline-block;
-}
+    @keyframes bob {
+      0%   { transform: translateY(0); }
+      25%  { transform: translateY(-25px); }
+      50%  { transform: translateY(0); }
+      75%  { transform: translateY(25px); }
+      100% { transform: translateY(0); }
+    }
+    .bob-wrapper {
+      animation: bob 2.5s ease-in-out infinite;
+      display: inline-block;
+    }
     .page {
       position: relative;
       max-width: 800px;
@@ -213,7 +212,7 @@
       const scrollY = window.scrollY;
       document.querySelectorAll('.floating-image').forEach(el => {
         const offset = (scrollY - el.offsetTop) * 0.1;
-        el.style.transform = `translateY(${offset}px)`;
+        el.style.translate = `0 ${offset}px`;
       });
     });
   </script>
