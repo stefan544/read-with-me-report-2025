@@ -52,7 +52,7 @@
       will-change: transform;
       z-index: 2;
       opacity: 0;
-      transition: opacity 0.8s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .floating-image.visible {
       opacity: 1;
@@ -102,9 +102,29 @@
       font-size: 0.9em;
       color: #666;
     }
+    /* Fallback for no JavaScript */
+    noscript .page,
+    noscript .logo {
+      opacity: 1;
+      transform: none;
+    }
+    noscript .floating-image {
+      display: none;
+    }
   </style>
 </head>
 <body>
+  <noscript>
+    <style>
+      .page, .logo {
+        opacity: 1;
+        transform: none;
+      }
+      .floating-image {
+        display: none;
+      }
+    </style>
+  </noscript>
   <div class="logo">
     <img src="logo1.png" alt="Read With Me logo featuring book and sun icon" />
   </div>
@@ -166,27 +186,15 @@
           entry.target.classList.remove('visible');
         }
       });
-    }, { threshold: 0.5, rootMargin: '-200px' });
+    }, { threshold: 0.2 });
     elements.forEach(el => observer.observe(el));
-
-    let lastScrollY = 0;
     window.addEventListener('scroll', () => {
-      lastScrollY = window.scrollY;
-    });
-
-    let time = 0;
-    function animate() {
-      time += 0.05; // Adjust for bobbing speed (smaller = slower)
-      document.querySelectorAll('.floating-image.visible').forEach(el => {
-        const bobOffset = Math.sin(time) * 5; // Adjust 5 for bobbing amplitude (in px)
-        const parallaxOffset = (lastScrollY - el.offsetTop) * 0.1; // Parallax speed (0.1 = subtle)
-        const totalY = bobOffset + parallaxOffset;
-        const baseTransform = getComputedStyle(el).transform || 'none';
-        el.style.transform = baseTransform === 'none' ? `translateY(${totalY}px)` : `${baseTransform} translateY(${totalY}px)`;
+      const scrollY = window.scrollY;
+      document.querySelectorAll('.floating-image').forEach(el => {
+        const offset = (scrollY - el.offsetTop) * 0.1;
+        el.style.transform = `translateY(${offset}px)`;
       });
-      requestAnimationFrame(animate);
-    }
-    requestAnimationFrame(animate);
+    });
   </script>
 </body>
 </html>
